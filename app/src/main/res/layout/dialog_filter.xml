@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rectangle_corners_bottom"
+        android:paddingBottom="@dimen/_8sdp">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_dialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/realEstateStatuses"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_surrounded_corners_grey"
+            android:dropDownVerticalOffset="@dimen/_28sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <ImageView
+            android:id="@+id/arrowStatuses"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:rotation="-90"
+            android:tint="@color/darkGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/realEstateStatuses"
+            app:layout_constraintEnd_toEndOf="@+id/realEstateStatuses"
+            app:layout_constraintTop_toTopOf="@+id/realEstateStatuses"
+            app:srcCompat="@drawable/ic_arrow_2" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/realEstateCategories"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_surrounded_corners_grey"
+            android:dropDownVerticalOffset="@dimen/_28sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/realEstateStatuses" />
+
+        <ImageView
+            android:id="@+id/arrowCategories"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:rotation="-90"
+            android:tint="@color/darkGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/realEstateCategories"
+            app:layout_constraintEnd_toEndOf="@+id/realEstateCategories"
+            app:layout_constraintTop_toTopOf="@+id/realEstateCategories"
+            app:srcCompat="@drawable/ic_arrow_2" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/regions"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_surrounded_corners_grey"
+            android:dropDownVerticalOffset="@dimen/_28sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/realEstateCategories" />
+
+        <ImageView
+            android:id="@+id/arrowRegions"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:rotation="-90"
+            android:tint="@color/darkGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/regions"
+            app:layout_constraintEnd_toEndOf="@+id/regions"
+            app:layout_constraintTop_toTopOf="@+id/regions"
+            app:srcCompat="@drawable/ic_arrow_2" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/districts"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_surrounded_corners_grey"
+            android:dropDownVerticalOffset="@dimen/_28sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/regions" />
+
+        <ImageView
+            android:id="@+id/arrowDistricts"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:rotation="-90"
+            android:tint="@color/darkGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/districts"
+            app:layout_constraintEnd_toEndOf="@+id/districts"
+            app:layout_constraintTop_toTopOf="@+id/districts"
+            app:srcCompat="@drawable/ic_arrow_2" />
+
+        <EditText
+            android:id="@+id/realEstateAge"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_surrounded_corners_grey"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:hint="@string/real_estate_age"
+            android:inputType="number"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/districts" />
+
+        <View
+            android:id="@+id/view_seekBarPrice"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_64sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/bg_rectangle_surrounded_corners_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/amount" />
+
+        <com.github.guilhe.views.SeekBarRangedView
+            android:id="@+id/seekBar_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="@id/view_seekBarPrice"
+            app:layout_constraintEnd_toEndOf="@id/view_seekBarPrice"
+            app:layout_constraintStart_toStartOf="@id/view_seekBarPrice"
+            app:layout_constraintTop_toTopOf="@id/view_seekBarPrice"
+            app:max="10000"
+            app:min="100"
+            app:progressColor="@color/darkGrey" />
+
+        <TextView
+            android:id="@+id/amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/price"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="@+id/realEstateAge"
+            app:layout_constraintTop_toBottomOf="@+id/realEstateAge" />
+
+        <TextView
+            android:id="@+id/sar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/sar"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/amount"
+            app:layout_constraintEnd_toEndOf="@+id/realEstateAge" />
+
+        <TextView
+            android:id="@+id/area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/area"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="@+id/view_seekBarPrice"
+            app:layout_constraintTop_toBottomOf="@+id/view_seekBarPrice" />
+
+        <TextView
+            android:id="@+id/meter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/meter"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="@+id/view_seekBarPrice"
+            app:layout_constraintTop_toBottomOf="@+id/view_seekBarPrice" />
+
+        <View
+            android:id="@+id/view_seekBarArea"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_64sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/bg_rectangle_surrounded_corners_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/area" />
+
+        <com.github.guilhe.views.SeekBarRangedView
+            android:id="@+id/seekBar_area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="@id/view_seekBarArea"
+            app:layout_constraintEnd_toEndOf="@id/view_seekBarArea"
+            app:layout_constraintStart_toStartOf="@id/view_seekBarArea"
+            app:layout_constraintTop_toTopOf="@id/view_seekBarArea"
+            app:progressColor="@color/darkGrey" />
+
+        <Button
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/darkGrey"
+            android:elevation="@dimen/_4sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:paddingStart="@dimen/_32sdp"
+            android:paddingEnd="@dimen/_32sdp"
+            android:text="@string/search"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="@+id/view_seekBarArea"
+            app:layout_constraintTop_toBottomOf="@+id/view_seekBarArea" />
+
+        <ImageView
+            android:id="@+id/reset"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/bg_oval"
+            android:backgroundTint="@color/lightGrey"
+            android:padding="@dimen/_6sdp"
+            android:tint="@color/darkGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/search"
+            app:layout_constraintStart_toEndOf="@+id/search"
+            app:layout_constraintTop_toTopOf="@+id/search"
+            app:srcCompat="@drawable/ic_reset" />
+
+        <TextView
+            android:id="@+id/minPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@id/view_seekBarPrice"
+            app:layout_constraintStart_toStartOf="@+id/seekBar_price"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar_price"
+            tools:text="100" />
+
+        <TextView
+            android:id="@+id/maxPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@id/view_seekBarPrice"
+            app:layout_constraintEnd_toEndOf="@+id/seekBar_price"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar_price"
+            tools:text="10000" />
+
+        <TextView
+            android:id="@+id/minArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@id/view_seekBarArea"
+            app:layout_constraintStart_toStartOf="@+id/seekBar_area"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar_area"
+            tools:text="100" />
+
+        <TextView
+            android:id="@+id/maxArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@id/view_seekBarArea"
+            app:layout_constraintEnd_toEndOf="@+id/seekBar_area"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar_area"
+            tools:text="10000" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

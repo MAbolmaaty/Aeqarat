@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".ui.PaymentCardAddFragment">
+
+    <include android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView_cardNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/card_number"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/cardNumber"
+                style="@style/editTextSurrounded"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_cardNumber" />
+
+            <TextView
+                android:id="@+id/textView_cardType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/card_type"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardNumber" />
+
+            <TextView
+                android:id="@+id/cardType"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_surrounded_corners_grey"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:gravity="center_vertical|start"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_12sdp"
+                android:text="@string/visa"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_cardType" />
+
+            <TextView
+                android:id="@+id/textView_expirationDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/date_expiration"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardType" />
+
+            <TextView
+                android:id="@+id/expirationDate"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/darkGrey"
+                android:gravity="center_vertical|start"
+                android:background="@drawable/bg_rectangle_surrounded_corners_grey"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_expirationDate" />
+
+            <ImageView
+                android:id="@+id/calendar"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:src="@drawable/ic_calendar"
+                android:tint="@color/darkGrey"
+                app:layout_constraintBottom_toBottomOf="@+id/expirationDate"
+                app:layout_constraintEnd_toEndOf="@+id/expirationDate"
+                app:layout_constraintTop_toTopOf="@+id/expirationDate" />
+
+            <TextView
+                android:id="@+id/textView_cvv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/cvv"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/expirationDate" />
+
+            <EditText
+                android:id="@+id/cvv"
+                style="@style/editTextSurrounded"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_cvv" />
+
+            <CheckBox
+                android:id="@+id/defaultCard"
+                style="@style/checkbox"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:text="@string/default_card"
+                android:textColor="@color/darkGrey"
+                android:buttonTint="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvv" />
+
+            <Button
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_margin="@dimen/_16sdp"
+                android:background="@drawable/bg_rectangle_corners_18"
+                android:backgroundTint="@color/darkGrey"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:paddingStart="@dimen/_28sdp"
+                android:paddingEnd="@dimen/_28sdp"
+                android:text="@string/add"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/defaultCard"
+                app:layout_constraintVertical_bias="0" />
+
+            <ProgressBar
+                android:id="@+id/progress"
+                style="@style/progressBar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

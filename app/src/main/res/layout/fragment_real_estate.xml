@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.RealEstateFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appBarLayout"
+        android:background="@android:color/white">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="@android:color/white"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_228sdp"
+                app:layout_collapseMode="parallax">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/bg_shimmer"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/sliderView_realEstate"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:sliderAnimationDuration="500"
+                    app:sliderCircularHandlerEnabled="true"
+                    app:sliderIndicatorAnimationDuration="500"
+                    app:sliderIndicatorGravity="start|bottom"
+                    app:sliderIndicatorMargin="@dimen/_12sdp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="@dimen/_2sdp"
+                    app:sliderIndicatorRadius="@dimen/_1sdp"
+                    app:sliderIndicatorSelectedColor="@color/lightGrey"
+                    app:sliderIndicatorUnselectedColor="@color/darkGrey"
+                    tools:context=".ui.activities.SlidesShowActivity" />
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:background="@drawable/bg_oval"
+                    android:padding="@dimen/_6sdp"
+                    android:src="@drawable/ic_arrow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:background="@drawable/bg_rectangle_corners_18"
+                    android:backgroundTint="@color/yellow"
+                    android:fontFamily="@font/cairo_semi_bold"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:paddingEnd="@dimen/_8sdp"
+                    android:textColor="@color/darkGrey"
+                    android:textSize="@dimen/_10sdp"
+                    android:visibility="gone"
+                    tools:text="@string/real_estate_category"
+                    tools:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView_360"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_margin="@dimen/_4sdp"
+                    android:background="@drawable/bg_oval"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/ic_360"
+                    android:tint="@color/darkGrey"
+                    android:visibility="invisible"
+                    tools:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rectangle_corners_bottom"
+            android:elevation="@dimen/_4sdp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners_bottom"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:gravity="center"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="@+id/barrier"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Real estate name" />
+
+            <TextView
+                android:id="@+id/addressDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners_bottom"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:gravity="center"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="@id/barrier"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                tools:text="Address Details" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="@dimen/_52sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners_18"
+                android:backgroundTint="@color/darkGrey"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_10sdp"
+                tools:text="@string/rent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/barrier"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners_bottom"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:maxEms="6"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/barrier"
+                app:layout_constraintTop_toBottomOf="@+id/status"
+                tools:text="52411 sar/meter" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="start"
+                app:constraint_referenced_ids="status, amount" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="amount, addressDetails"/>
+
+            <!--Expand For Request-->
+            <View
+                android:id="@+id/view_request"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:background="@drawable/bg_rectangle_corners_18"
+                android:backgroundTint="@color/darkGrey"
+                android:layoutDirection="ltr"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/expandForRequest"
+                app:layout_constraintEnd_toStartOf="@+id/expandForRequest"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/expandForRequest" />
+
+            <TextView
+                android:id="@+id/request"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:layoutDirection="ltr"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/view_request"
+                app:layout_constraintEnd_toEndOf="@+id/view_request"
+                app:layout_constraintStart_toStartOf="@+id/view_request"
+                app:layout_constraintTop_toTopOf="@+id/view_request" />
+
+            <ImageView
+                android:id="@+id/imageView_request"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layoutDirection="ltr"
+                android:padding="@dimen/_4sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/request"
+                app:layout_constraintEnd_toStartOf="@+id/request"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/view_request"
+                app:layout_constraintTop_toTopOf="@+id/request" />
+
+            <!--Expand For Holder-->
+            <ImageView
+                android:id="@+id/expandForHolder"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layoutDirection="ltr"
+                android:src="@drawable/ic_circular_dots"
+                android:visibility="gone"
+                tools:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barrier2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/favoriteForHolder"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layoutDirection="ltr"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/ic_like"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/expandForHolder"
+                app:layout_constraintEnd_toStartOf="@+id/shareForHolder"
+                app:layout_constraintStart_toEndOf="@+id/icon2"
+                app:layout_constraintTop_toTopOf="@+id/expandForHolder" />
+
+            <ImageView
+                android:id="@+id/shareForHolder"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layoutDirection="ltr"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/ic_share"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/expandForHolder"
+                app:layout_constraintEnd_toStartOf="@+id/expandForHolder"
+                app:layout_constraintStart_toEndOf="@+id/favoriteForHolder"
+                app:layout_constraintTop_toTopOf="@+id/expandForHolder" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners_18"
+                android:backgroundTint="@color/darkGrey"
+                android:layoutDirection="ltr"
+                android:visibility="gone"
+                tools:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/view2"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier2" />
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:layoutDirection="ltr"
+                android:text="@string/info_rent"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone"
+                tools:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/image1"
+                app:layout_constraintEnd_toEndOf="@+id/view1"
+                app:layout_constraintStart_toEndOf="@+id/image1"
+                app:layout_constraintTop_toTopOf="@+id/image1" />
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:layoutDirection="ltr"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_info"
+                android:visibility="gone"
+                tools:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/view1"
+                app:layout_constraintEnd_toStartOf="@+id/text1"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@+id/view1"
+                app:layout_constraintTop_toTopOf="@+id/view1" />
+
+            <ImageView
+                android:id="@+id/icon1"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:background="@drawable/bg_oval"
+                android:backgroundTint="@color/darkGrey"
+                android:layoutDirection="ltr"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/ic_info"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/expandForHolder"
+                app:layout_constraintEnd_toStartOf="@+id/icon2"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/expandForHolder" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners_18"
+                android:backgroundTint="@color/darkGrey"
+                android:layoutDirection="ltr"
+                android:visibility="gone"
+                tools:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/expandForHolder"
+                app:layout_constraintStart_toEndOf="@+id/view1"
+                app:layout_constraintTop_toBottomOf="@id/barrier2" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:layoutDirection="ltr"
+                android:text="@string/accounting"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone"
+                tools:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/image2"
+                app:layout_constraintEnd_toEndOf="@+id/view2"
+                app:layout_constraintStart_toEndOf="@+id/image2"
+                app:layout_constraintTop_toTopOf="@+id/image2" />
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:layoutDirection="ltr"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_wallet"
+                android:tint="@android:color/white"
+                android:visibility="gone"
+                tools:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/view2"
+                app:layout_constraintEnd_toStartOf="@+id/text2"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@+id/view2"
+                app:layout_constraintTop_toTopOf="@+id/view2" />
+
+            <ImageView
+                android:id="@+id/icon2"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:background="@drawable/bg_oval"
+                android:backgroundTint="@color/darkGrey"
+                android:layoutDirection="ltr"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/ic_wallet"
+                android:tint="@android:color/white"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/expandForHolder"
+                app:layout_constraintEnd_toStartOf="@+id/favoriteForHolder"
+                app:layout_constraintStart_toEndOf="@+id/icon1"
+                app:layout_constraintTop_toTopOf="@+id/expandForHolder" />
+
+            <!-- Auction-->
+            <View
+                android:id="@+id/viewBid"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:background="@drawable/bg_rectangle_corners_18"
+                android:backgroundTint="@color/yellow"
+                android:layoutDirection="ltr"
+                android:visibility="invisible"
+                tools:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/expandForRequest"
+                app:layout_constraintEnd_toStartOf="@+id/expandForRequest"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/expandForRequest" />
+
+            <!-- Auction-->
+            <TextView
+                android:id="@+id/maxBid"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:gravity="start|center_vertical"
+                android:layoutDirection="ltr"
+                android:maxLines="1"
+                android:text="@string/no_bids_yet"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="invisible"
+                tools:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/viewBid"
+                app:layout_constraintEnd_toStartOf="@+id/join"
+                app:layout_constraintStart_toStartOf="@id/viewBid"
+                app:layout_constraintTop_toTopOf="@+id/viewBid" />
+
+            <!-- Auction-->
+            <View
+                android:id="@+id/view_expirationDate"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners_18"
+                android:backgroundTint="@color/lightGrey"
+                android:layoutDirection="ltr"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bidsCount"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toStartOf="@+id/viewBid"
+                app:layout_constraintTop_toBottomOf="@+id/viewBid" />
+
+            <!-- Auction-->
+            <TextView
+                android:id="@+id/expirationDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:layoutDirection="ltr"
+                android:text="@string/empty"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_8sdp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/view_expirationDate"
+                app:layout_constraintEnd_toEndOf="@+id/view_expirationDate"
+                app:layout_constraintTop_toTopOf="@id/view_expirationDate" />
+
+            <!-- Auction-->
+            <TextView
+                android:id="@+id/textView_expirationDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:layoutDirection="ltr"
+                android:text="@string/auction_expiration_date"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_8sdp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/view_expirationDate"
+                app:layout_constraintStart_toStartOf="@+id/view_expirationDate"
+                app:layout_constraintTop_toTopOf="@id/view_expirationDate" />
+
+            <!-- Auction-->
+            <TextView
+                android:id="@+id/bidsCount"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:background="@drawable/bg_rectangle_corners_18"
+                android:backgroundTint="@color/lightGrey"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:gravity="center_vertical|start"
+                android:layoutDirection="ltr"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_12sdp"
+                android:text="@string/empty"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/view_expirationDate"
+                app:layout_constraintEnd_toEndOf="@id/expandForRequest"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/view_expirationDate"
+                app:layout_constraintTop_toTopOf="@+id/view_expirationDate" />
+
+            <!-- Auction-->
+            <TextView
+                android:id="@+id/bids"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:layoutDirection="ltr"
+                android:text="@string/bids"
+                android:textSize="@dimen/_10sdp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/bidsCount"
+                app:layout_constraintEnd_toEndOf="@+id/bidsCount"
+                app:layout_constraintTop_toTopOf="@+id/bidsCount" />
+
+            <!-- Auction-->
+            <View
+                android:id="@+id/hideMaxBid"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_rectangle_corners_18"
+                android:backgroundTint="@android:color/white"
+                android:layoutDirection="ltr"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/viewBid"
+                app:layout_constraintStart_toStartOf="@id/join"
+                app:layout_constraintTop_toTopOf="@id/viewBid" />
+
+            <ImageView
+                android:id="@+id/favorite"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layoutDirection="ltr"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/ic_like"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/expandForRequest"
+                app:layout_constraintEnd_toStartOf="@+id/report"
+                app:layout_constraintStart_toEndOf="@+id/requestIcon"
+                app:layout_constraintTop_toTopOf="@+id/expandForRequest" />
+
+            <ImageView
+                android:id="@+id/report"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layoutDirection="ltr"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/ic_report"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/expandForRequest"
+                app:layout_constraintEnd_toStartOf="@+id/share"
+                app:layout_constraintStart_toEndOf="@+id/favorite"
+                app:layout_constraintTop_toTopOf="@+id/expandForRequest" />
+
+            <ImageView
+                android:id="@+id/share"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layoutDirection="ltr"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/ic_share"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/expandForRequest"
+                app:layout_constraintEnd_toStartOf="@+id/expandForRequest"
+                app:layout_constraintStart_toEndOf="@+id/report"
+                app:layout_constraintTop_toTopOf="@+id/expandForRequest" />
+
+            <ImageView
+                android:id="@+id/requestIcon"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:background="@drawable/bg_oval"
+                android:backgroundTint="@color/darkGrey"
+                android:layoutDirection="ltr"
+                android:padding="@dimen/_6sdp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/expandForRequest"
+                app:layout_constraintEnd_toStartOf="@+id/favorite"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/expandForRequest" />
+
+            <!-- Auction-->
+            <TextView
+                android:id="@+id/join"
+                android:layout_width="@dimen/_72sdp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_rectangle_corners_18"
+                android:backgroundTint="@color/darkGrey"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:gravity="center"
+                android:layoutDirection="ltr"
+                android:text="@string/join"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="invisible"
+                tools:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/viewBid"
+                app:layout_constraintEnd_toEndOf="@+id/viewBid"
+                app:layout_constraintTop_toTopOf="@+id/viewBid" />
+
+            <ImageView
+                android:id="@+id/expandForRequest"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layoutDirection="ltr"
+                android:src="@drawable/ic_circular_dots"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addressDetails"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <View
+                android:id="@+id/shimmer1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:background="@color/lightGrey"
+                tools:visibility="invisible"
+                app:layout_constraintEnd_toStartOf="@+id/status"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/shimmer2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:layout_marginEnd="@dimen/_56sdp"
+                android:background="@color/lightGrey"
+                tools:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shimmer1" />
+
+            <View
+                android:id="@+id/shimmer3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@color/lightGrey"
+                tools:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shimmer2" />
+
+            <ProgressBar
+                android:id="@+id/progress"
+                style="@style/progressBar"
+                android:layoutDirection="ltr"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorColor="@color/darkGrey"
+            app:tabIndicatorFullWidth="false"
+            app:tabTextAppearance="@style/tabText" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGrey" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

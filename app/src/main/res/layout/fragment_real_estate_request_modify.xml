@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".ui.RealEstateRequestModifyFragment">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/view_statuses"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/white"
+                android:elevation="@dimen/_2sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/divider"/>
+
+            <Button
+                android:id="@+id/negotiated"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:elevation="@dimen/_4sdp"
+                android:stateListAnimator="@null"
+                android:background="@drawable/bg_btn"
+                android:text="@string/negotiated"
+                android:textSize="@dimen/_12sdp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/cairo_semi_bold"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/negotiate"
+                app:layout_constraintTop_toTopOf="@id/view_statuses"
+                app:layout_constraintBottom_toBottomOf="@id/view_statuses"/>
+
+            <Button
+                android:id="@+id/negotiate"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:elevation="@dimen/_4sdp"
+                android:stateListAnimator="@null"
+                android:background="@drawable/bg_btn"
+                android:text="@string/negotiation"
+                android:textSize="@dimen/_12sdp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/cairo_semi_bold"
+                app:layout_constraintStart_toEndOf="@+id/negotiated"
+                app:layout_constraintEnd_toStartOf="@+id/pending"
+                app:layout_constraintTop_toTopOf="@id/view_statuses"
+                app:layout_constraintBottom_toBottomOf="@id/view_statuses"/>
+
+            <Button
+                android:id="@+id/pending"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:elevation="@dimen/_4sdp"
+                android:stateListAnimator="@null"
+                android:enabled="false"
+                android:textColor="@android:color/white"
+                android:textAllCaps="false"
+                android:text="@string/pending"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:background="@drawable/bg_btn"
+                app:layout_constraintStart_toEndOf="@+id/negotiate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/view_statuses"
+                app:layout_constraintBottom_toBottomOf="@id/view_statuses"/>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_24sdp"
+                android:elevation="@dimen/_2sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/negotiated"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

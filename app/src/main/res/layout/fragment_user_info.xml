@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    tools:context=".ui.InfoUserFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/view_userImage"
+            android:layout_width="@dimen/_86sdp"
+            android:layout_height="@dimen/_86sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/bg_oval"
+            android:backgroundTint="@color/lightGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/view_userImage"
+            app:layout_constraintEnd_toEndOf="@id/view_userImage"
+            app:layout_constraintStart_toStartOf="@id/view_userImage"
+            app:layout_constraintTop_toTopOf="@id/view_userImage" />
+
+        <ImageView
+            android:id="@+id/shadow"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.7"
+            android:background="@drawable/bg_oval"
+            android:backgroundTint="@color/grey"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/view_userImage"
+            app:layout_constraintEnd_toEndOf="@id/view_userImage"
+            app:layout_constraintStart_toStartOf="@id/view_userImage"
+            app:layout_constraintTop_toTopOf="@id/view_userImage" />
+
+        <ImageView
+            android:id="@+id/delete"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:background="@drawable/bg_oval"
+            android:backgroundTint="@android:color/white"
+            android:padding="@dimen/_6sdp"
+            android:src="@drawable/ic_delete"
+            android:tint="@color/darkGrey"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/view_userImage"
+            app:layout_constraintEnd_toEndOf="@id/view_userImage"
+            app:layout_constraintStart_toStartOf="@id/view_userImage"
+            app:layout_constraintTop_toTopOf="@id/view_userImage" />
+
+        <ImageView
+            android:id="@+id/camera"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:src="@drawable/ic_camera"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/view_userImage"
+            app:layout_constraintEnd_toEndOf="@id/view_userImage"
+            app:layout_constraintStart_toStartOf="@id/view_userImage"
+            app:layout_constraintTop_toTopOf="@id/view_userImage" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_6sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:progressBackgroundTint="@color/lightGrey"
+            android:progressTint="@android:color/white"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/view_userImage"
+            app:layout_constraintEnd_toEndOf="@id/view_userImage"
+            app:layout_constraintStart_toStartOf="@id/view_userImage"
+            app:layout_constraintTop_toTopOf="@id/view_userImage" />
+
+        <TextView
+            android:id="@+id/percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/view_userImage"
+            app:layout_constraintStart_toStartOf="@id/view_userImage"
+            app:layout_constraintTop_toBottomOf="@id/progressBar" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_margin="@dimen/_16sdp"
+            android:background="@color/lightGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userImage" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/username"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <EditText
+            android:id="@+id/editText_username"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/bg_rectangle_surrounded_corners_grey"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="center_vertical|start"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/username" />
+
+        <TextView
+            android:id="@+id/birthDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/date_birth"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_username" />
+
+        <TextView
+            android:id="@+id/textView_birthDate"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/bg_rectangle_surrounded_corners_grey"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="center_vertical|start"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/birthDate" />
+
+        <ImageView
+            android:id="@+id/calendar"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:src="@drawable/ic_calendar"
+            android:tint="@color/darkGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_birthDate"
+            app:layout_constraintEnd_toEndOf="@+id/textView_birthDate"
+            app:layout_constraintTop_toTopOf="@+id/textView_birthDate" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/address"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_birthDate" />
+
+        <EditText
+            android:id="@+id/editText_address"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/bg_rectangle_surrounded_corners_grey"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="center_vertical|start"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/address" />
+
+        <TextView
+            android:id="@+id/postcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/postal_code"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_address" />
+
+        <EditText
+            android:id="@+id/editText_postcode"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/bg_rectangle_surrounded_corners_grey"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="center_vertical|start"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postcode" />
+
+        <TextView
+            android:id="@+id/textView_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/email"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_postcode" />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/bg_rectangle_surrounded_corners_grey"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="center_vertical|start"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_email" />
+
+        <TextView
+            android:id="@+id/phoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/phone_number"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email" />
+
+        <View
+            android:id="@+id/view_phoneNumber"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/bg_rectangle_surrounded_corners_grey"
+            android:layoutDirection="ltr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/countryCodePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layoutDirection="ltr"
+            app:ccp_textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/view_phoneNumber"
+            app:layout_constraintEnd_toStartOf="@+id/editText_phoneNumber"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@+id/view_phoneNumber"
+            app:layout_constraintTop_toTopOf="@+id/view_phoneNumber" />
+
+        <EditText
+            android:id="@+id/editText_phoneNumber"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="center_vertical|start"
+            android:inputType="phone"
+            android:layoutDirection="ltr"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@id/view_phoneNumber"
+            app:layout_constraintEnd_toEndOf="@id/view_phoneNumber"
+            app:layout_constraintStart_toEndOf="@+id/countryCodePicker"
+            app:layout_constraintTop_toTopOf="@id/view_phoneNumber" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_margin="@dimen/_16sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/darkGrey"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_phoneNumber" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@style/progressBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

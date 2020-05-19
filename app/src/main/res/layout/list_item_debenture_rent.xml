@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userImage"
+        android:layout_width="@dimen/_76sdp"
+        android:layout_height="@dimen/_76sdp"
+        android:background="@drawable/bg_shimmer_oval"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/cairo_semi_bold"
+        android:maxLines="1"
+        android:textColor="@color/darkGrey"
+        android:textSize="@dimen/_12sdp"
+        android:text="@string/default_name"
+        app:layout_constraintBottom_toTopOf="@+id/userType"
+        app:layout_constraintEnd_toStartOf="@+id/expand"
+        app:layout_constraintStart_toEndOf="@+id/userImage"
+        app:layout_constraintTop_toTopOf="@id/userImage"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/userType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/cairo_semi_bold"
+        android:maxLines="1"
+        android:text="@string/default_type"
+        android:textColor="@color/darkGrey"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/userImage"
+        app:layout_constraintEnd_toStartOf="@+id/expand"
+        app:layout_constraintStart_toEndOf="@id/userImage"
+        app:layout_constraintTop_toBottomOf="@id/username" />
+
+    <ImageView
+        android:id="@+id/expand"
+        android:layout_width="@dimen/_26sdp"
+        android:layout_height="@dimen/_26sdp"
+        android:layout_margin="@dimen/_8sdp"
+        android:background="@drawable/bg_oval"
+        android:backgroundTint="@color/lightGrey"
+        android:padding="@dimen/_6sdp"
+        android:rotation="90"
+        android:src="@drawable/ic_arrow_3"
+        android:tint="@color/darkGrey"
+        app:layout_constraintBottom_toBottomOf="@+id/userImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/userImage" />
+
+    <TextView
+        android:id="@+id/debentureType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:fontFamily="@font/cairo_semi_bold"
+        android:text="@string/debenture"
+        android:textColor="@color/darkGrey"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/dateCollect"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/textView_debentureType"
+        app:layout_constraintTop_toBottomOf="@+id/userImage" />
+
+    <TextView
+        android:id="@+id/dateCollect"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cairo_semi_bold"
+        android:text="@string/default_date"
+        android:textColor="@color/darkGrey"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/debentureValue"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/textView_dateCollect"
+        app:layout_constraintTop_toTopOf="@id/debentureType" />
+
+    <TextView
+        android:id="@+id/debentureValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cairo_semi_bold"
+        android:text="@string/default_value"
+        android:textColor="@color/darkGrey"
+        android:textSize="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/textView_debentureValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintTop_toTopOf="@+id/debentureType" />
+
+    <TextView
+        android:id="@+id/textView_debentureType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:fontFamily="@font/cairo_semi_bold"
+        android:text="@string/debenture_type"
+        android:textSize="@dimen/_10sdp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/textView_dateCollect"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/debentureType" />
+
+    <TextView
+        android:id="@+id/textView_dateCollect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cairo_semi_bold"
+        android:text="@string/date_collect"
+        android:textSize="@dimen/_10sdp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/textView_debentureValue"
+        app:layout_constraintStart_toEndOf="@+id/textView_debentureType"
+        app:layout_constraintTop_toBottomOf="@+id/dateCollect" />
+
+    <TextView
+        android:id="@+id/textView_debentureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:fontFamily="@font/cairo_semi_bold"
+        android:text="@string/value_debenture"
+        android:textSize="@dimen/_10sdp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textView_dateCollect"
+        app:layout_constraintTop_toBottomOf="@id/dateCollect" />
+
+    <Button
+        android:id="@+id/debentureShow"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_26sdp"
+        android:layout_margin="@dimen/_8sdp"
+        android:elevation="@dimen/_2sdp"
+        android:stateListAnimator="@null"
+        android:background="@drawable/background_button"
+        android:text="@string/show"
+        android:textSize="@dimen/_12sdp"
+        android:textAllCaps="false"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/cairo_semi_bold"
+        android:paddingStart="@dimen/_26sdp"
+        android:paddingEnd="@dimen/_26sdp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/debentureDownload"
+        app:layout_constraintTop_toBottomOf="@+id/textView_debentureType" />
+
+    <Button
+        android:id="@+id/debentureDownload"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_26sdp"
+        android:layout_margin="@dimen/_8sdp"
+        android:elevation="@dimen/_2sdp"
+        android:stateListAnimator="@null"
+        android:background="@drawable/background_button"
+        android:text="@string/download"
+        android:textSize="@dimen/_12sdp"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/cairo_semi_bold"
+        android:paddingStart="@dimen/_26sdp"
+        android:paddingEnd="@dimen/_26sdp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toEndOf="@+id/debentureShow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_debentureType" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/lightGrey"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/debentureShow"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

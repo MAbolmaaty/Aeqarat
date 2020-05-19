@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".ui.RealEstateRequestDetailsFragment">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/clientView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:color/white"
+                android:elevation="@dimen/_2sdp"
+                app:layout_constraintBottom_toBottomOf="@id/divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/clientImage"
+                style="@style/circleImageView"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:elevation="@dimen/_2sdp"
+                android:src="@drawable/logo_aeqarat_v2"
+                android:tint="@color/darkGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/clientName"
+                style="@style/textView"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:elevation="@dimen/_2sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:maxLines="1"
+                android:text="Ahmed"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toTopOf="@id/clientEmail"
+                app:layout_constraintStart_toEndOf="@+id/clientImage"
+                app:layout_constraintTop_toTopOf="@+id/clientImage" />
+
+            <TextView
+                android:id="@+id/clientEmail"
+                style="@style/textView"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:elevation="@dimen/_2sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:maxLines="1"
+                android:text="example@gmail.com"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toTopOf="@id/clientPhoneNumber"
+                app:layout_constraintStart_toEndOf="@+id/clientImage"
+                app:layout_constraintTop_toBottomOf="@+id/clientName" />
+
+            <TextView
+                android:id="@+id/clientPhoneNumber"
+                style="@style/textView"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:elevation="@dimen/_2sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:maxLines="1"
+                android:text="010011012015"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/clientImage"
+                app:layout_constraintStart_toEndOf="@+id/clientImage"
+                app:layout_constraintTop_toBottomOf="@+id/clientEmail"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_24sdp"
+                android:elevation="@dimen/_2sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clientImage" />
+
+            <TextView
+                android:id="@+id/textView_requestDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/request_date"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clientView" />
+
+            <TextView
+                android:id="@+id/requestDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="01/04/2019"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="@+id/textView_requestDate"
+                app:layout_constraintTop_toBottomOf="@+id/textView_requestDate" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/textView_startDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/date_start"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView_requestDate"
+                app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+            <TextView
+                android:id="@+id/startDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="12/05/2019"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/textView_startDate" />
+
+            <TextView
+                android:id="@+id/textView_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:text="@string/duration"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/requestDate" />
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/empty"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="@+id/textView_duration"
+                app:layout_constraintTop_toBottomOf="@+id/textView_duration" />
+
+            <TextView
+                android:id="@+id/textView_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/amount"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView_duration"
+                app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/empty"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="@+id/textView_amount"
+                app:layout_constraintTop_toBottomOf="@+id/textView_amount" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_margin="@dimen/_16sdp"
+                android:background="@drawable/bg_rectangle_corners_18"
+                android:backgroundTint="@color/darkGrey"
+                android:elevation="@dimen/_4sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/request_modify"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amount"
+                app:layout_constraintVertical_bias="1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

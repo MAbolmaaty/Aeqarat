@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    tools:context=".ui.DetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_8sdp">
+
+        <!--Ad Number-->
+        <View
+            android:id="@+id/view_adNumber"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/lightGrey"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView_adNumber"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:src="@drawable/ic_number"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_adNumber"
+            app:layout_constraintStart_toStartOf="@+id/view_adNumber"
+            app:layout_constraintTop_toTopOf="@+id/view_adNumber" />
+
+        <TextView
+            android:id="@+id/textView_adNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/number_ad"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/view_adNumber"
+            app:layout_constraintEnd_toStartOf="@+id/adNumber"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/imageView_adNumber"
+            app:layout_constraintTop_toTopOf="@id/view_adNumber" />
+
+        <TextView
+            android:id="@+id/adNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="end"
+            android:maxLines="1"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_adNumber"
+            app:layout_constraintEnd_toEndOf="@+id/view_adNumber"
+            app:layout_constraintStart_toEndOf="@+id/textView_adNumber"
+            app:layout_constraintTop_toTopOf="@+id/view_adNumber" />
+
+        <!--Age-->
+        <View
+            android:id="@+id/view_age"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/lightGrey"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_adNumber" />
+
+        <ImageView
+            android:id="@+id/imageView_age"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:src="@drawable/ic_age"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_age"
+            app:layout_constraintStart_toStartOf="@+id/view_age"
+            app:layout_constraintTop_toTopOf="@+id/view_age" />
+
+        <TextView
+            android:id="@+id/textView_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/real_estate_age"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/view_age"
+            app:layout_constraintEnd_toStartOf="@id/age"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/imageView_age"
+            app:layout_constraintTop_toTopOf="@id/view_age" />
+
+        <TextView
+            android:id="@+id/age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="end"
+            android:maxLines="1"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_age"
+            app:layout_constraintEnd_toEndOf="@+id/view_age"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/textView_age"
+            app:layout_constraintTop_toTopOf="@+id/view_age" />
+
+        <!--Area-->
+        <View
+            android:id="@+id/view_area"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/lightGrey"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_age" />
+
+        <ImageView
+            android:id="@+id/imageView_area"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:src="@drawable/ic_area"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_area"
+            app:layout_constraintStart_toStartOf="@+id/view_area"
+            app:layout_constraintTop_toTopOf="@+id/view_area" />
+
+        <TextView
+            android:id="@+id/textView_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/area"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/view_area"
+            app:layout_constraintStart_toEndOf="@+id/imageView_area"
+            app:layout_constraintTop_toTopOf="@id/view_area" />
+
+        <TextView
+            android:id="@+id/areaInMeter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/in_meter"
+            android:textSize="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_area"
+            app:layout_constraintEnd_toStartOf="@+id/area"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/textView_area"
+            app:layout_constraintTop_toTopOf="@+id/view_area" />
+
+        <TextView
+            android:id="@+id/area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="end"
+            android:maxLines="1"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_area"
+            app:layout_constraintEnd_toEndOf="@+id/view_area"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/areaInMeter"
+            app:layout_constraintTop_toTopOf="@+id/view_area" />
+
+        <!--Rooms-->
+        <View
+            android:id="@+id/view_rooms"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/lightGrey"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_area" />
+
+        <ImageView
+            android:id="@+id/imageView_rooms"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:src="@drawable/ic_bed"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_rooms"
+            app:layout_constraintStart_toStartOf="@+id/view_rooms"
+            app:layout_constraintTop_toTopOf="@+id/view_rooms" />
+
+        <TextView
+            android:id="@+id/textView_rooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/rooms"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/view_rooms"
+            app:layout_constraintEnd_toStartOf="@+id/rooms"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/imageView_rooms"
+            app:layout_constraintTop_toTopOf="@id/view_rooms" />
+
+        <TextView
+            android:id="@+id/rooms"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="end"
+            android:maxLines="1"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_rooms"
+            app:layout_constraintEnd_toEndOf="@+id/view_rooms"
+            app:layout_constraintStart_toEndOf="@+id/textView_rooms"
+            app:layout_constraintTop_toTopOf="@+id/view_rooms" />
+
+        <!--Insurance-->
+        <View
+            android:id="@+id/view_insurance"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/lightGrey"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_rooms" />
+
+        <ImageView
+            android:id="@+id/imageView_insurance"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:src="@drawable/ic_wallet"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_insurance"
+            app:layout_constraintStart_toStartOf="@+id/view_insurance"
+            app:layout_constraintTop_toTopOf="@+id/view_insurance" />
+
+        <TextView
+            android:id="@+id/textView_insurance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/insurance"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/view_insurance"
+            app:layout_constraintStart_toEndOf="@+id/imageView_insurance"
+            app:layout_constraintTop_toTopOf="@id/view_insurance" />
+
+        <TextView
+            android:id="@+id/insuranceCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/in_sar"
+            android:textSize="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_insurance"
+            app:layout_constraintEnd_toStartOf="@+id/insurance"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/textView_insurance"
+            app:layout_constraintTop_toTopOf="@+id/view_insurance" />
+
+        <TextView
+            android:id="@+id/insurance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="end"
+            android:maxLines="1"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_insurance"
+            app:layout_constraintEnd_toEndOf="@+id/view_insurance"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/insuranceCurrency"
+            app:layout_constraintTop_toTopOf="@+id/view_insurance" />
+
+        <!--Apartments-->
+        <View
+            android:id="@+id/view_apartments"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/lightGrey"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_insurance" />
+
+        <ImageView
+            android:id="@+id/imageView_apartments"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:src="@drawable/ic_office_buildings"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_apartments"
+            app:layout_constraintStart_toStartOf="@+id/view_apartments"
+            app:layout_constraintTop_toTopOf="@+id/view_apartments" />
+
+        <TextView
+            android:id="@+id/textView_apartments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/apartments"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/view_apartments"
+            app:layout_constraintEnd_toStartOf="@+id/apartments"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/imageView_apartments"
+            app:layout_constraintTop_toTopOf="@id/view_apartments" />
+
+        <TextView
+            android:id="@+id/apartments"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="end"
+            android:maxLines="1"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_apartments"
+            app:layout_constraintEnd_toEndOf="@+id/view_apartments"
+            app:layout_constraintStart_toEndOf="@+id/textView_apartments"
+            app:layout_constraintTop_toTopOf="@+id/view_apartments" />
+
+        <!--Electricity-->
+        <View
+            android:id="@+id/view_electricity"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/lightGrey"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_apartments" />
+
+        <ImageView
+            android:id="@+id/imageView_electricity"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:src="@drawable/ic_electricity"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_electricity"
+            app:layout_constraintStart_toStartOf="@+id/view_electricity"
+            app:layout_constraintTop_toTopOf="@+id/view_electricity" />
+
+        <TextView
+            android:id="@+id/textView_electricity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/electricity_acct"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/view_electricity"
+            app:layout_constraintStart_toEndOf="@+id/imageView_electricity"
+            app:layout_constraintTop_toTopOf="@id/view_electricity" />
+
+        <TextView
+            android:id="@+id/electricityStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/darkGrey"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="center"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_electricity"
+            app:layout_constraintEnd_toStartOf="@+id/electricity"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/textView_electricity"
+            app:layout_constraintTop_toTopOf="@+id/view_electricity" />
+
+        <TextView
+            android:id="@+id/electricity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="end"
+            android:maxLines="1"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_electricity"
+            app:layout_constraintEnd_toEndOf="@+id/view_electricity"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@id/electricityStatus"
+            app:layout_constraintTop_toTopOf="@+id/view_electricity" />
+
+        <!--Water-->
+        <View
+            android:id="@+id/view_water"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/lightGrey"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_electricity" />
+
+        <ImageView
+            android:id="@+id/imageView_water"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:src="@drawable/ic_water_drops"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_water"
+            app:layout_constraintStart_toStartOf="@+id/view_water"
+            app:layout_constraintTop_toTopOf="@+id/view_water" />
+
+        <TextView
+            android:id="@+id/textView_water"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/water_acct"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/view_water"
+            app:layout_constraintStart_toEndOf="@+id/imageView_water"
+            app:layout_constraintTop_toTopOf="@id/view_water" />
+
+        <TextView
+            android:id="@+id/waterStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/darkGrey"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="center"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:text="@string/private_acct"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_water"
+            app:layout_constraintEnd_toStartOf="@+id/water"
+            app:layout_constraintStart_toEndOf="@+id/textView_water"
+            app:layout_constraintTop_toTopOf="@+id/view_water" />
+
+        <TextView
+            android:id="@+id/water"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="end"
+            android:maxLines="1"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_water"
+            app:layout_constraintEnd_toEndOf="@+id/view_water"
+            app:layout_constraintStart_toEndOf="@id/waterStatus"
+            app:layout_constraintTop_toTopOf="@+id/view_water" />
+
+        <!--Bathrooms-->
+        <View
+            android:id="@+id/view_bathrooms"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/lightGrey"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_water" />
+
+        <ImageView
+            android:id="@+id/imageView_bathrooms"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:src="@drawable/ic_bathtub"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_bathrooms"
+            app:layout_constraintStart_toStartOf="@+id/view_bathrooms"
+            app:layout_constraintTop_toTopOf="@+id/view_bathrooms" />
+
+        <TextView
+            android:id="@+id/textView_bathrooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/bathrooms"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/view_bathrooms"
+            app:layout_constraintEnd_toStartOf="@id/bathrooms"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/imageView_bathrooms"
+            app:layout_constraintTop_toTopOf="@id/view_bathrooms" />
+
+        <TextView
+            android:id="@+id/bathrooms"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="end"
+            android:maxLines="1"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_bathrooms"
+            app:layout_constraintEnd_toEndOf="@+id/view_bathrooms"
+            app:layout_constraintStart_toEndOf="@+id/textView_bathrooms"
+            app:layout_constraintTop_toTopOf="@+id/view_bathrooms" />
+
+        <!--Floors-->
+        <View
+            android:id="@+id/view_floors"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/lightGrey"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_bathrooms" />
+
+        <ImageView
+            android:id="@+id/imageView_floors"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:src="@drawable/ic_floors"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_floors"
+            app:layout_constraintStart_toStartOf="@+id/view_floors"
+            app:layout_constraintTop_toTopOf="@+id/view_floors" />
+
+        <TextView
+            android:id="@+id/textView_floors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/floors"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/view_floors"
+            app:layout_constraintEnd_toStartOf="@id/floors"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/imageView_floors"
+            app:layout_constraintTop_toTopOf="@id/view_floors" />
+
+        <TextView
+            android:id="@+id/floors"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="end"
+            android:maxLines="1"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_floors"
+            app:layout_constraintEnd_toEndOf="@+id/view_floors"
+            app:layout_constraintStart_toEndOf="@+id/textView_floors"
+            app:layout_constraintTop_toTopOf="@+id/view_floors" />
+
+        <!--Offices-->
+        <View
+            android:id="@+id/view_offices"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/lightGrey"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_floors" />
+
+        <ImageView
+            android:id="@+id/imageView_offices"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:src="@drawable/ic_desk"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_offices"
+            app:layout_constraintStart_toStartOf="@+id/view_offices"
+            app:layout_constraintTop_toTopOf="@+id/view_offices" />
+
+        <TextView
+            android:id="@+id/textView_offices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/offices"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/view_offices"
+            app:layout_constraintEnd_toStartOf="@id/offices"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/imageView_offices"
+            app:layout_constraintTop_toTopOf="@id/view_offices" />
+
+        <TextView
+            android:id="@+id/offices"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="end"
+            android:maxLines="1"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_offices"
+            app:layout_constraintEnd_toEndOf="@+id/view_offices"
+            app:layout_constraintStart_toEndOf="@+id/textView_offices"
+            app:layout_constraintTop_toTopOf="@+id/view_offices" />
+
+        <!--Shops-->
+        <View
+            android:id="@+id/view_shops"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/lightGrey"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_offices" />
+
+        <ImageView
+            android:id="@+id/imageView_shops"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:src="@drawable/ic_shop"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_shops"
+            app:layout_constraintStart_toStartOf="@+id/view_shops"
+            app:layout_constraintTop_toTopOf="@+id/view_shops" />
+
+        <TextView
+            android:id="@+id/textView_shops"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/shops"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/view_shops"
+            app:layout_constraintEnd_toStartOf="@id/shops"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/imageView_shops"
+            app:layout_constraintTop_toTopOf="@id/view_shops" />
+
+        <TextView
+            android:id="@+id/shops"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="end"
+            android:maxLines="1"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_shops"
+            app:layout_constraintEnd_toEndOf="@+id/view_shops"
+            app:layout_constraintStart_toEndOf="@+id/textView_shops"
+            app:layout_constraintTop_toTopOf="@+id/view_shops" />
+
+        <!--halls-->
+        <View
+            android:id="@+id/view_halls"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/lightGrey"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_shops" />
+
+        <ImageView
+            android:id="@+id/imageView_halls"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:src="@drawable/ic_chair"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_halls"
+            app:layout_constraintStart_toStartOf="@+id/view_halls"
+            app:layout_constraintTop_toTopOf="@+id/view_halls" />
+
+        <TextView
+            android:id="@+id/textView_halls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/halls"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/view_halls"
+            app:layout_constraintEnd_toStartOf="@id/halls"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/imageView_halls"
+            app:layout_constraintTop_toTopOf="@id/view_halls" />
+
+        <TextView
+            android:id="@+id/halls"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="end"
+            android:maxLines="1"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_halls"
+            app:layout_constraintEnd_toEndOf="@+id/view_halls"
+            app:layout_constraintStart_toEndOf="@+id/textView_halls"
+            app:layout_constraintTop_toTopOf="@+id/view_halls" />
+
+        <!--Street Width-->
+        <View
+            android:id="@+id/view_streetWidth"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/lightGrey"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_halls" />
+
+        <ImageView
+            android:id="@+id/imageView_streetWidth"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:src="@drawable/ic_width"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_streetWidth"
+            app:layout_constraintStart_toStartOf="@+id/view_streetWidth"
+            app:layout_constraintTop_toTopOf="@+id/view_streetWidth" />
+
+        <TextView
+            android:id="@+id/textView_streetWidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/street_width"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/view_streetWidth"
+            app:layout_constraintStart_toEndOf="@+id/imageView_streetWidth"
+            app:layout_constraintTop_toTopOf="@id/view_streetWidth" />
+
+        <TextView
+            android:id="@+id/streetWidthInMeter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/in_meter"
+            android:textSize="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_streetWidth"
+            app:layout_constraintEnd_toStartOf="@+id/streetWidth"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/textView_streetWidth"
+            app:layout_constraintTop_toTopOf="@+id/view_streetWidth" />
+
+        <TextView
+            android:id="@+id/streetWidth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="end"
+            android:maxLines="1"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_streetWidth"
+            app:layout_constraintEnd_toEndOf="@+id/view_streetWidth"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/streetWidthInMeter"
+            app:layout_constraintTop_toTopOf="@+id/view_streetWidth" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

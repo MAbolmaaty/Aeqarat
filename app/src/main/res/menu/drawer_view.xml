@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/home"/>
+
+        <item
+            android:id="@+id/nav_adminRealEstates"
+            android:icon="@drawable/ic_real_estates"
+            android:visible="false"
+            android:title="@string/real_estates_responsible_for"/>
+
+        <item
+            android:id="@+id/nav_realEstates"
+            android:icon="@drawable/ic_real_estates"
+            android:title="@string/real_estates"/>
+
+        <item
+            android:id="@+id/nav_requests"
+            android:icon="@drawable/ic_requests"
+            android:title="@string/requests"/>
+
+        <item
+            android:id="@+id/nav_requests_admin"
+            android:icon="@drawable/ic_requests"
+            android:visible="false"
+            android:title="@string/requests"/>
+
+        <item
+            android:id="@+id/nav_favorites"
+            android:icon="@drawable/ic_favorites"
+            android:title="@string/favorites"/>
+
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/ic_notification"
+            android:title="@string/notifications"/>
+
+        <item
+            android:id="@+id/nav_messages"
+            android:icon="@drawable/ic_messages"
+            android:title="@string/messages"/>
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/settings"/>
+
+        <item
+            android:id="@+id/nav_privacyPolicy"
+            android:icon="@drawable/ic_privacy_policy"
+            android:title="@string/terms_and_conditions"/>
+
+        <item
+            android:id="@+id/nav_contactUs"
+            android:icon="@drawable/ic_contact_us"
+            android:title="@string/contact_us"/>
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/logout"/>
+
+    </group>
+</menu>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.DocumentsAddFragment">
+
+    <Button
+        android:id="@+id/addNewDocument"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_38sdp"
+        android:background="@drawable/bg_rectangle_corners_18"
+        android:backgroundTint="@color/darkGrey"
+        android:layout_margin="@dimen/_16sdp"
+        android:textColor="@android:color/white"
+        android:text="@string/add_new_document"
+        android:fontFamily="@font/cairo_semi_bold"
+        android:textSize="@dimen/_12sdp"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addNewDocument"/>
+
+    <TextView
+        android:id="@+id/noDocuments"
+        style="@style/textView"
+        android:text="@string/no_documents"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addNewDocument"/>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="@style/progressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

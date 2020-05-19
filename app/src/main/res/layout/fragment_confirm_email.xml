@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    tools:context=".ui.EmailConfirmFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/view_phone"
+            android:layout_width="@dimen/_152sdp"
+            android:layout_height="@dimen/_152sdp"
+            android:layout_marginTop="@dimen/_72sdp"
+            android:background="@drawable/bg_oval"
+            android:backgroundTint="@color/yellow"
+            android:elevation="@dimen/_4sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/phone"
+            android:layout_width="@dimen/_136sdp"
+            android:layout_height="@dimen/_136sdp"
+            android:background="@drawable/bg_oval"
+            android:elevation="@dimen/_4sdp"
+            android:padding="@dimen/_24sdp"
+            android:src="@drawable/ic_phone"
+            app:layout_constraintBottom_toBottomOf="@+id/view_phone"
+            app:layout_constraintEnd_toEndOf="@+id/view_phone"
+            app:layout_constraintStart_toStartOf="@+id/view_phone"
+            app:layout_constraintTop_toTopOf="@+id/view_phone" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_42sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/bg_rectangle_corners"
+            android:ems="10"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="start|center_vertical"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_phone" />
+
+        <Button
+            android:id="@+id/confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/darkGrey"
+            android:elevation="@dimen/_4sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:paddingStart="@dimen/_28sdp"
+            android:paddingEnd="@dimen/_28sdp"
+            android:text="@string/confirm"
+            android:textAllCaps="false"
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="@+id/email"
+            app:layout_constraintStart_toStartOf="@+id/email"
+            app:layout_constraintTop_toBottomOf="@+id/email" />
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:src="@drawable/ic_close"
+            android:tint="@color/darkGrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@style/progressBar"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:elevation="@dimen/_4sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

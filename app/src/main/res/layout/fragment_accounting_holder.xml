@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".ui.AccountingHolderFragment">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp">
+
+            <View
+                android:id="@+id/view_income"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners"
+                android:backgroundTint="@color/lightGrey"
+                app:layout_constraintBottom_toBottomOf="@id/sar_income"
+                app:layout_constraintEnd_toStartOf="@+id/view_expenses"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView_income"
+                android:layout_width="@dimen/_64sdp"
+                android:layout_height="@dimen/_64sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/bg_oval_surrounded"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/ic_income"
+                app:layout_constraintEnd_toEndOf="@+id/view_income"
+                app:layout_constraintStart_toStartOf="@+id/view_income"
+                app:layout_constraintTop_toTopOf="@+id/view_income" />
+
+            <TextView
+                android:id="@+id/textView_income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_62sdp"
+                android:background="@drawable/bg_rectangle_corners_18"
+                android:backgroundTint="@android:color/black"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:text="@string/income"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView_income"
+                app:layout_constraintStart_toStartOf="@+id/imageView_income"
+                app:layout_constraintTop_toTopOf="@+id/imageView_income" />
+
+            <TextView
+                android:id="@+id/income"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/empty"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="@+id/view_income"
+                app:layout_constraintStart_toStartOf="@+id/view_income"
+                app:layout_constraintTop_toBottomOf="@+id/textView_income" />
+
+            <TextView
+                android:id="@+id/sar_income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@string/sar"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="@+id/view_income"
+                app:layout_constraintStart_toStartOf="@+id/view_income"
+                app:layout_constraintTop_toBottomOf="@+id/income" />
+
+            <View
+                android:id="@+id/view_expenses"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners"
+                android:backgroundTint="@color/lightGrey"
+                app:layout_constraintBottom_toBottomOf="@+id/sar_expenses"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/view_income"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView_expenses"
+                android:layout_width="@dimen/_64sdp"
+                android:layout_height="@dimen/_64sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/bg_oval_surrounded"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/ic_expenses"
+                app:layout_constraintEnd_toEndOf="@+id/view_expenses"
+                app:layout_constraintStart_toStartOf="@+id/view_expenses"
+                app:layout_constraintTop_toTopOf="@+id/view_expenses" />
+
+            <TextView
+                android:id="@+id/textView_expenses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_62sdp"
+                android:background="@drawable/bg_rectangle_corners_18"
+                android:backgroundTint="@android:color/black"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:text="@string/expenses"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView_expenses"
+                app:layout_constraintStart_toStartOf="@+id/imageView_expenses"
+                app:layout_constraintTop_toTopOf="@+id/imageView_expenses" />
+
+            <TextView
+                android:id="@+id/expenses"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/empty"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="@+id/view_expenses"
+                app:layout_constraintStart_toStartOf="@+id/view_expenses"
+                app:layout_constraintTop_toBottomOf="@+id/textView_expenses" />
+
+            <TextView
+                android:id="@+id/sar_expenses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@string/sar"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@id/view_expenses"
+                app:layout_constraintEnd_toEndOf="@+id/view_expenses"
+                app:layout_constraintStart_toStartOf="@+id/view_expenses"
+                app:layout_constraintTop_toBottomOf="@+id/expenses" />
+
+            <View
+                android:id="@+id/view_commission"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners"
+                android:backgroundTint="@color/lightGrey"
+                app:layout_constraintBottom_toBottomOf="@+id/sar_commission"
+                app:layout_constraintEnd_toStartOf="@+id/view_balance"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_income" />
+
+            <ImageView
+                android:id="@+id/imageView_commission"
+                android:layout_width="@dimen/_64sdp"
+                android:layout_height="@dimen/_64sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/bg_oval_surrounded"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/ic_profit"
+                app:layout_constraintEnd_toEndOf="@+id/view_commission"
+                app:layout_constraintStart_toStartOf="@+id/view_commission"
+                app:layout_constraintTop_toTopOf="@+id/view_commission" />
+
+            <TextView
+                android:id="@+id/textView_commission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_62sdp"
+                android:background="@drawable/bg_rectangle_corners_18"
+                android:backgroundTint="@android:color/black"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:text="@string/commission"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView_commission"
+                app:layout_constraintStart_toStartOf="@+id/imageView_commission"
+                app:layout_constraintTop_toTopOf="@+id/imageView_commission" />
+
+            <TextView
+                android:id="@+id/commission"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/empty"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="@+id/view_commission"
+                app:layout_constraintStart_toStartOf="@+id/view_commission"
+                app:layout_constraintTop_toBottomOf="@+id/textView_commission" />
+
+            <TextView
+                android:id="@+id/sar_commission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@string/sar"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@id/view_commission"
+                app:layout_constraintEnd_toEndOf="@+id/view_commission"
+                app:layout_constraintStart_toStartOf="@+id/view_commission"
+                app:layout_constraintTop_toBottomOf="@+id/commission" />
+
+            <View
+                android:id="@+id/view_balance"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners"
+                android:backgroundTint="@color/lightGrey"
+                app:layout_constraintBottom_toBottomOf="@+id/sar_balance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/view_commission"
+                app:layout_constraintTop_toBottomOf="@+id/view_income" />
+
+            <ImageView
+                android:id="@+id/imageView_balance"
+                android:layout_width="@dimen/_64sdp"
+                android:layout_height="@dimen/_64sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/bg_oval_surrounded"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/ic_profit"
+                app:layout_constraintEnd_toEndOf="@+id/view_balance"
+                app:layout_constraintStart_toStartOf="@+id/view_balance"
+                app:layout_constraintTop_toTopOf="@+id/view_balance" />
+
+            <TextView
+                android:id="@+id/textView_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_62sdp"
+                android:background="@drawable/bg_rectangle_corners_18"
+                android:backgroundTint="@android:color/black"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:text="@string/balance"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView_balance"
+                app:layout_constraintStart_toStartOf="@+id/imageView_balance"
+                app:layout_constraintTop_toTopOf="@+id/imageView_balance" />
+
+            <TextView
+                android:id="@+id/balance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/empty"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="@+id/view_balance"
+                app:layout_constraintStart_toStartOf="@+id/view_balance"
+                app:layout_constraintTop_toBottomOf="@+id/textView_balance" />
+
+            <TextView
+                android:id="@+id/sar_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@string/sar"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@id/view_balance"
+                app:layout_constraintEnd_toEndOf="@+id/view_balance"
+                app:layout_constraintStart_toStartOf="@+id/view_balance"
+                app:layout_constraintTop_toBottomOf="@+id/balance" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

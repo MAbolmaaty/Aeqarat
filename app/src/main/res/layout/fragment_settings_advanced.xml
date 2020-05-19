@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    tools:context=".ui.SettingsAdvancedFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/notifications"
+            style="@style/textView"
+            android:layout_margin="@dimen/_16sdp"
+            android:text="@string/notifications"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@color/lightGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notifications" />
+
+        <TextView
+            android:id="@+id/websiteNotifications"
+            style="@style/textView"
+            android:layout_margin="@dimen/_16sdp"
+            android:text="@string/website_notifications"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toStartOf="@id/checkbox_websiteNotifications"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <CheckBox
+            android:id="@+id/checkbox_websiteNotifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16sdp"
+            android:clickable="false"
+            android:checked="true"
+            android:buttonTint="@color/darkGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/websiteNotifications"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/websiteNotifications"
+            app:layout_constraintTop_toTopOf="@+id/websiteNotifications" />
+
+        <TextView
+            android:id="@+id/websiteNotificationsDescription"
+            style="@style/textView"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:text="@string/website_notifications_description"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toStartOf="@id/checkbox_websiteNotifications"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/websiteNotifications" />
+
+        <TextView
+            android:id="@+id/statusAndCardsNotifications"
+            style="@style/textView"
+            android:layout_margin="@dimen/_16sdp"
+            android:text="@string/status_and_cards_notifications"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toStartOf="@id/checkbox_statusAndCardsNotifications"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/websiteNotificationsDescription" />
+
+        <CheckBox
+            android:id="@+id/checkbox_statusAndCardsNotifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16sdp"
+            android:checked="true"
+            android:clickable="false"
+            android:buttonTint="@color/darkGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/statusAndCardsNotifications"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/statusAndCardsNotifications"
+            app:layout_constraintTop_toTopOf="@+id/statusAndCardsNotifications" />
+
+        <TextView
+            android:id="@+id/statusAndCardsNotificationsDescription"
+            style="@style/textView"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:text="@string/status_and_cards_notifications_description"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toStartOf="@id/checkbox_statusAndCardsNotifications"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/statusAndCardsNotifications" />
+
+        <TextView
+            android:id="@+id/sendNotifications"
+            style="@style/textView"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_42sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:text="@string/send_notifications_to_email"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/statusAndCardsNotificationsDescription" />
+
+        <EditText
+            android:id="@+id/email"
+            style="@style/editTextSurrounded"
+            android:hint="@string/email"
+            android:enabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sendNotifications" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:background="@color/lightGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/email" />
+
+        <TextView
+            android:id="@+id/app"
+            style="@style/textView"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="@string/app"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+        <TextView
+            android:id="@+id/language"
+            style="@style/textView"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_8sdp"
+            android:text="@string/language"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toStartOf="@+id/selectedLanguage"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/app" />
+
+        <TextView
+            android:id="@+id/selectedLanguage"
+            style="@style/textView"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/language"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/language" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

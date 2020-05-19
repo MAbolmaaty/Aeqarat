@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".ui.DebentureFragment">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:src="@drawable/logo_aeqarat_v5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/debenture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_26sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/debenture"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_36sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/number"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/debenture" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="debenture, number" />
+
+            <TextView
+                android:id="@+id/textView_onDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_26sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/on_date"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/debenture"
+                app:layout_constraintStart_toEndOf="@+id/barrier" />
+
+            <TextView
+                android:id="@+id/textView_equivalent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_26sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/equivalent_to"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/number"
+                app:layout_constraintStart_toEndOf="@+id/barrier" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="textView_onDate, textView_equivalent" />
+
+            <View
+                android:id="@+id/view_onDate"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners"
+                android:backgroundTint="@color/lightGrey"
+                app:layout_constraintBottom_toBottomOf="@+id/debenture"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/barrier2"
+                app:layout_constraintTop_toTopOf="@+id/debenture" />
+
+            <TextView
+                android:id="@+id/onDate"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/default_date"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/view_onDate"
+                app:layout_constraintEnd_toEndOf="@+id/view_onDate"
+                app:layout_constraintStart_toStartOf="@+id/view_onDate"
+                app:layout_constraintTop_toTopOf="@+id/view_onDate" />
+
+            <View
+                android:id="@+id/view_equivalent"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners"
+                android:backgroundTint="@color/lightGrey"
+                app:layout_constraintBottom_toBottomOf="@+id/number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/barrier2"
+                app:layout_constraintTop_toTopOf="@+id/number" />
+
+            <TextView
+                android:id="@+id/equivalent"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/default_date"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/view_equivalent"
+                app:layout_constraintEnd_toEndOf="@+id/view_equivalent"
+                app:layout_constraintStart_toStartOf="@+id/view_equivalent"
+                app:layout_constraintTop_toTopOf="@+id/view_equivalent" />
+
+            <View
+                android:id="@+id/view_info"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_26sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_surrounded_corners_grey"
+                android:layout_marginBottom="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/number" />
+
+            <TextView
+                android:id="@+id/textView_nameRealEstate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/real_estate_name"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="@id/view_info"
+                app:layout_constraintTop_toTopOf="@id/view_info" />
+
+            <TextView
+                android:id="@+id/textView_nameOwner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_36sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/owner_name"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="@id/view_info"
+                app:layout_constraintTop_toBottomOf="@+id/textView_nameRealEstate" />
+
+            <TextView
+                android:id="@+id/textView_receivedFrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_56sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/received_from"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="@id/view_info"
+                app:layout_constraintTop_toBottomOf="@+id/textView_nameOwner" />
+
+            <TextView
+                android:id="@+id/textView_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_36sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/amount"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="@id/view_info"
+                app:layout_constraintTop_toBottomOf="@+id/textView_receivedFrom" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="textView_nameRealEstate,
+                textView_nameOwner, textView_receivedFrom, textView_amount"
+                app:barrierDirection="end"/>
+
+            <View
+                android:id="@+id/view_nameRealEstate"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners"
+                android:backgroundTint="@color/lightGrey"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_nameRealEstate"
+                app:layout_constraintEnd_toEndOf="@id/view_info"
+                app:layout_constraintStart_toEndOf="@id/barrier3"
+                app:layout_constraintTop_toTopOf="@+id/textView_nameRealEstate" />
+
+            <View
+                android:id="@+id/view_nameOwner"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners"
+                android:backgroundTint="@color/lightGrey"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_nameOwner"
+                app:layout_constraintEnd_toEndOf="@id/view_info"
+                app:layout_constraintStart_toEndOf="@id/barrier3"
+                app:layout_constraintTop_toTopOf="@+id/textView_nameOwner" />
+
+            <View
+                android:id="@+id/view_receivedFrom"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners"
+                android:backgroundTint="@color/lightGrey"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_receivedFrom"
+                app:layout_constraintEnd_toEndOf="@id/view_info"
+                app:layout_constraintStart_toEndOf="@id/barrier3"
+                app:layout_constraintTop_toTopOf="@+id/textView_receivedFrom" />
+
+            <View
+                android:id="@+id/view_amount"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners"
+                android:backgroundTint="@color/lightGrey"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_amount"
+                app:layout_constraintEnd_toEndOf="@id/view_info"
+                app:layout_constraintStart_toEndOf="@id/barrier3"
+                app:layout_constraintTop_toTopOf="@+id/textView_amount" />
+
+            <TextView
+                android:id="@+id/nameRealEstate"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/real_estate_name"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="@id/view_nameRealEstate"
+                app:layout_constraintTop_toTopOf="@id/view_nameRealEstate"
+                app:layout_constraintEnd_toEndOf="@+id/view_nameRealEstate"
+                app:layout_constraintBottom_toBottomOf="@+id/view_nameRealEstate"/>
+
+            <TextView
+                android:id="@+id/nameOwner"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/owner_name"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="@id/view_nameOwner"
+                app:layout_constraintTop_toTopOf="@+id/view_nameOwner"
+                app:layout_constraintBottom_toBottomOf="@+id/view_nameOwner"
+                app:layout_constraintEnd_toEndOf="@+id/view_nameOwner"/>
+
+            <TextView
+                android:id="@+id/receivedFrom"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/received_from"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="@id/view_receivedFrom"
+                app:layout_constraintTop_toTopOf="@+id/view_receivedFrom"
+                app:layout_constraintEnd_toEndOf="@+id/view_receivedFrom"
+                app:layout_constraintBottom_toBottomOf="@+id/view_receivedFrom"/>
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/amount"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="@id/view_amount"
+                app:layout_constraintTop_toTopOf="@+id/view_amount"
+                app:layout_constraintEnd_toEndOf="@+id/view_amount"
+                app:layout_constraintBottom_toBottomOf="@+id/view_amount"/>
+
+                <RadioButton
+                    android:id="@+id/button_cash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:buttonTint="@color/darkGrey"
+                    android:text="@string/cash"
+                    android:clickable="false"
+                    android:layout_marginTop="@dimen/_26sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    app:layout_constraintStart_toStartOf="@+id/view_info"
+                    app:layout_constraintEnd_toStartOf="@+id/button_bankAccount"
+                    app:layout_constraintTop_toBottomOf="@+id/view_amount"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+
+                <RadioButton
+                    android:id="@+id/button_bankAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/darkGrey"
+                    android:text="@string/bank_account"
+                    android:clickable="false"
+                    app:layout_constraintStart_toEndOf="@+id/button_cash"
+                    app:layout_constraintTop_toTopOf="@id/button_cash"
+                    app:layout_constraintEnd_toStartOf="@+id/button_visa"/>
+
+                <RadioButton
+                    android:id="@+id/button_visa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/darkGrey"
+                    android:text="@string/visa"
+                    android:clickable="false"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    app:layout_constraintStart_toEndOf="@id/button_bankAccount"
+                    app:layout_constraintEnd_toEndOf="@id/view_info"
+                    app:layout_constraintTop_toTopOf="@id/button_cash"/>
+
+                <RadioButton
+                    android:id="@+id/button_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/darkGrey"
+                    android:text="@string/card"
+                    android:clickable="false"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:layout_constraintStart_toStartOf="@id/view_info"
+                    app:layout_constraintTop_toBottomOf="@id/button_cash"
+                    app:layout_constraintEnd_toStartOf="@+id/button_network"
+                    app:layout_constraintHorizontal_chainStyle="spread"/>
+
+                <RadioButton
+                    android:id="@+id/button_network"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/darkGrey"
+                    android:text="@string/network"
+                    android:clickable="false"
+                    app:layout_constraintStart_toEndOf="@+id/button_card"
+                    app:layout_constraintTop_toTopOf="@id/button_card"
+                    app:layout_constraintEnd_toEndOf="@id/view_info"/>
+
+            <TextView
+                android:id="@+id/thatIsFor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_10sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:textColor="@color/darkGrey"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                app:layout_constraintStart_toStartOf="@id/view_info"
+                app:layout_constraintTop_toBottomOf="@+id/button_network"
+                android:text="@string/that_is_for"/>
+
+            <TextView
+                android:id="@+id/detailsDebenture"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_124sdp"
+                android:background="@drawable/bg_rectangle_corners"
+                android:backgroundTint="@color/lightGrey"
+                android:layout_margin="@dimen/_8sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:textSize="@dimen/_10sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingBottom="@dimen/_4sdp"
+                android:text="@string/details_debenture"
+                app:layout_constraintStart_toStartOf="@id/view_info"
+                app:layout_constraintEnd_toEndOf="@id/view_info"
+                app:layout_constraintTop_toBottomOf="@+id/thatIsFor"/>
+
+            <TextView
+                android:id="@+id/note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_10sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:textColor="@color/darkGrey"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintStart_toStartOf="@id/view_info"
+                app:layout_constraintTop_toBottomOf="@+id/detailsDebenture"
+                android:text="@string/note"/>
+
+            <TextView
+                android:id="@+id/textView_signatureRecipient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/darkGrey"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/signature_recipient"
+                app:layout_constraintStart_toStartOf="@id/view_info"
+                app:layout_constraintTop_toBottomOf="@+id/note"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_16sdp"/>
+
+            <TextView
+                android:id="@+id/textView_signatureAccountant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/darkGrey"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/signature_accountant"
+                app:layout_constraintStart_toStartOf="@id/view_info"
+                app:layout_constraintTop_toBottomOf="@+id/textView_signatureRecipient"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"/>
+
+            <TextView
+                android:id="@+id/textView_signatureManager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/darkGrey"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/signature_manager"
+                app:layout_constraintStart_toStartOf="@id/view_info"
+                app:layout_constraintTop_toBottomOf="@+id/textView_signatureAccountant"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"/>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="textView_signatureManager,
+                textView_signatureAccountant, textView_signatureRecipient"
+                app:barrierDirection="end"/>
+
+            <TextView
+                android:id="@+id/signatureRecipient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/darkGrey"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/empty"
+                app:layout_constraintStart_toEndOf="@+id/barrier4"
+                app:layout_constraintEnd_toStartOf="@+id/logo2"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView_signatureRecipient"
+                android:layout_marginStart="@dimen/_8sdp" />
+
+            <TextView
+                android:id="@+id/signatureAccountant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/darkGrey"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/empty"
+                app:layout_constraintStart_toEndOf="@id/barrier4"
+                app:layout_constraintEnd_toStartOf="@+id/logo2"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView_signatureAccountant"
+                android:layout_marginStart="@dimen/_8sdp" />
+
+            <TextView
+                android:id="@+id/signatureManager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/darkGrey"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/empty"
+                app:layout_constraintStart_toEndOf="@id/barrier4"
+                app:layout_constraintEnd_toStartOf="@+id/logo2"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView_signatureManager"
+                android:layout_marginStart="@dimen/_8sdp" />
+
+            <ImageView
+                android:id="@+id/logo2"
+                android:layout_width="@dimen/_76sdp"
+                android:layout_height="@dimen/_76sdp"
+                android:src="@drawable/logo_aeqarat_v6"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="@+id/view_info"
+                app:layout_constraintTop_toTopOf="@id/textView_signatureRecipient"
+                app:layout_constraintBottom_toBottomOf="@id/textView_signatureManager"/>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_26sdp"
+                app:layout_constraintStart_toStartOf="@id/view_info"
+                app:layout_constraintEnd_toEndOf="@id/view_info"
+                app:layout_constraintTop_toBottomOf="@id/textView_signatureManager"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

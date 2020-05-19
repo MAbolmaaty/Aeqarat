@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".ui.AuctionJoinFragment">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView_warning"
+                style="@style/textView"
+                android:layout_margin="@dimen/_8sdp"
+                android:text="@string/warning"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/warning"
+                style="@style/textView"
+                android:layout_width="0dp"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners"
+                android:backgroundTint="@color/lightGrey"
+                android:gravity="start"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingEnd="@dimen/_8sdp"
+                android:text="@string/auction_warning"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_warning" />
+
+            <TextView
+                android:id="@+id/textView_insuranceAmount"
+                style="@style/textView"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="@string/amount_insurance"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/warning" />
+
+            <View
+                android:id="@+id/view_insuranceAmount"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners"
+                android:backgroundTint="@color/lightGrey"
+                android:layoutDirection="ltr"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_insuranceAmount" />
+
+            <TextView
+                android:id="@+id/insuranceAmount"
+                style="@style/textView"
+                android:layout_margin="@dimen/_8sdp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/empty"
+                app:layout_constraintBottom_toBottomOf="@id/view_insuranceAmount"
+                app:layout_constraintEnd_toStartOf="@id/currency"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="@id/view_insuranceAmount"
+                app:layout_constraintTop_toTopOf="@+id/view_insuranceAmount" />
+
+            <TextView
+                android:id="@+id/currency"
+                style="@style/textView"
+                android:layout_margin="@dimen/_8sdp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/sar"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@id/view_insuranceAmount"
+                app:layout_constraintEnd_toEndOf="@id/view_insuranceAmount"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@+id/insuranceAmount"
+                app:layout_constraintTop_toTopOf="@id/view_insuranceAmount" />
+
+            <TextView
+                android:id="@+id/textView_bankAccount"
+                style="@style/textView"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="@string/bank_account"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_insuranceAmount" />
+
+            <View
+                android:id="@+id/view_bankAccount"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_rectangle_corners"
+                android:backgroundTint="@color/lightGrey"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_IBAN"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_bankAccount" />
+
+            <TextView
+                android:id="@+id/textView_bankName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/bank_name"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="@+id/view_bankAccount"
+                app:layout_constraintTop_toTopOf="@+id/view_bankAccount" />
+
+            <TextView
+                android:id="@+id/bankName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/empty"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView_bankName"
+                app:layout_constraintEnd_toEndOf="@+id/view_bankAccount"
+                app:layout_constraintStart_toEndOf="@+id/barrier" />
+
+            <TextView
+                android:id="@+id/textView_accountNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/account_number"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="@+id/view_bankAccount"
+                app:layout_constraintTop_toBottomOf="@+id/textView_bankName" />
+
+            <TextView
+                android:id="@+id/accountNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/empty"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView_accountNumber"
+                app:layout_constraintEnd_toEndOf="@+id/view_bankAccount"
+                app:layout_constraintStart_toEndOf="@+id/barrier" />
+
+            <TextView
+                android:id="@+id/textView_IBAN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@string/iban"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="@+id/view_bankAccount"
+                app:layout_constraintTop_toBottomOf="@+id/textView_accountNumber" />
+
+            <TextView
+                android:id="@+id/iban"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/empty"
+                android:textColor="@color/darkGrey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView_IBAN"
+                app:layout_constraintEnd_toEndOf="@+id/view_bankAccount"
+                app:layout_constraintStart_toEndOf="@+id/barrier" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="textView_bankName,textView_accountNumber,textView_IBAN" />
+
+            <TextView
+                android:id="@+id/confirmHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_38sdp"
+                android:text="@string/confirm_auction_hint"
+                android:textColor="@color/darkGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_bankAccount" />
+
+            <Button
+                android:id="@+id/confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:background="@drawable/bg_rectangle_corners_18"
+                android:backgroundTint="@color/lightGrey"
+                android:enabled="false"
+                android:paddingStart="@dimen/_28sdp"
+                android:paddingEnd="@dimen/_28sdp"
+                android:text="@string/confirm"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/confirmHint" />
+
+            <ProgressBar
+                android:id="@+id/progress"
+                style="@style/progressBar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

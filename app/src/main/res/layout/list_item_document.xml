@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/bg_rectangle_corners"
+    android:backgroundTint="@color/lightGrey"
+    android:layout_margin="@dimen/_8sdp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/viewId"
+        android:layout_width="@dimen/_112sdp"
+        android:layout_height="@dimen/_112sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_28sdp"
+        android:background="@drawable/bg_rectangle_corners"
+        android:layout_margin="@dimen/_2sdp"
+        android:fontFamily="@font/cairo_semi_bold"
+        android:gravity="center"
+        tools:text="@string/id"
+        android:textColor="@color/darkGrey"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewId"
+        app:layout_constraintEnd_toEndOf="@+id/viewId"
+        app:layout_constraintStart_toStartOf="@+id/viewId" />
+
+    <ImageView
+        android:id="@+id/download"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:background="@drawable/bg_oval"
+        android:padding="@dimen/_6sdp"
+        android:src="@drawable/ic_download"
+        android:tint="@color/darkGrey"
+        app:layout_constraintTop_toTopOf="@+id/viewId"
+        app:layout_constraintBottom_toTopOf="@+id/title"
+        app:layout_constraintStart_toEndOf="@+id/delete"
+        app:layout_constraintEnd_toEndOf="@+id/viewId"/>
+
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:background="@drawable/bg_oval"
+        android:padding="@dimen/_6sdp"
+        android:src="@drawable/ic_delete"
+        android:tint="@color/darkGrey"
+        app:layout_constraintTop_toTopOf="@+id/viewId"
+        app:layout_constraintBottom_toTopOf="@+id/title"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@+id/viewId"
+        app:layout_constraintEnd_toStartOf="@+id/download"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

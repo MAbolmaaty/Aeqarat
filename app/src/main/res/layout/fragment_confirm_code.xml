@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    tools:context=".ui.CodeConfirmFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:src="@drawable/ic_close"
+            android:tint="@color/darkGrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_lock"
+            android:layout_width="@dimen/_152sdp"
+            android:layout_height="@dimen/_152sdp"
+            android:layout_marginTop="@dimen/_48sdp"
+            android:background="@drawable/bg_oval"
+            android:backgroundTint="@color/yellow"
+            android:elevation="@dimen/_4sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/close" />
+
+        <ImageView
+            android:id="@+id/imageView_lock"
+            android:layout_width="@dimen/_136sdp"
+            android:layout_height="@dimen/_136sdp"
+            android:background="@drawable/bg_oval"
+            android:elevation="@dimen/_4sdp"
+            android:padding="@dimen/_24sdp"
+            android:src="@drawable/ic_lock_2"
+            app:layout_constraintBottom_toBottomOf="@+id/view_lock"
+            app:layout_constraintEnd_toEndOf="@+id/view_lock"
+            app:layout_constraintStart_toStartOf="@+id/view_lock"
+            app:layout_constraintTop_toTopOf="@+id/view_lock" />
+
+        <TextView
+            android:id="@+id/enterCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_42sdp"
+            android:fontFamily="@font/cairo_bold"
+            android:text="@string/enter_code"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_lock" />
+
+        <EditText
+            android:id="@+id/digit1"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_28sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:background="@drawable/bg_rectangle_corners"
+            android:elevation="@dimen/_4sdp"
+            android:ems="1"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:layoutDirection="ltr"
+            android:maxLength="1"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toStartOf="@id/digit2"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enterCode" />
+
+        <EditText
+            android:id="@+id/digit2"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_4sdp"
+            android:background="@drawable/bg_rectangle_corners"
+            android:elevation="@dimen/_4sdp"
+            android:ems="1"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:layoutDirection="ltr"
+            android:maxLength="1"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/digit1"
+            app:layout_constraintEnd_toStartOf="@id/digit3"
+            app:layout_constraintStart_toEndOf="@+id/digit1"
+            app:layout_constraintTop_toTopOf="@+id/digit1" />
+
+        <EditText
+            android:id="@+id/digit3"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_4sdp"
+            android:background="@drawable/bg_rectangle_corners"
+            android:elevation="@dimen/_4sdp"
+            android:ems="1"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:layoutDirection="ltr"
+            android:maxLength="1"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/digit1"
+            app:layout_constraintEnd_toStartOf="@id/digit4"
+            app:layout_constraintStart_toEndOf="@+id/digit2"
+            app:layout_constraintTop_toTopOf="@+id/digit1" />
+
+        <EditText
+            android:id="@+id/digit4"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_margin="@dimen/_4sdp"
+            android:background="@drawable/bg_rectangle_corners"
+            android:elevation="@dimen/_4sdp"
+            android:ems="1"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:layoutDirection="ltr"
+            android:maxLength="1"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/digit1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/digit3"
+            app:layout_constraintTop_toTopOf="@+id/digit1" />
+
+        <Button
+            android:id="@+id/confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:background="@drawable/bg_rectangle_corners_18"
+            android:backgroundTint="@color/darkGrey"
+            android:elevation="@dimen/_4sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:paddingStart="@dimen/_28sdp"
+            android:paddingEnd="@dimen/_28sdp"
+            android:text="@string/confirm"
+            android:textAllCaps="false"
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/digit1" />
+
+        <TextView
+            android:id="@+id/sendAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:text="@string/send_again"
+            android:textColor="@color/darkGrey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/confirm"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@style/progressBar"
+            android:elevation="@dimen/_4sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

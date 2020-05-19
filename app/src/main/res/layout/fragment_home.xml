@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.HomeFragment">
+
+    <fragment
+        android:id="@+id/fragment_map"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cameraTilt="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_margin="@dimen/_12sdp"
+        android:background="@drawable/bg_oval"
+        android:elevation="@dimen/_18sdp"
+        android:padding="@dimen/_8sdp"
+        android:src="@drawable/ic_menu"
+        android:tint="@color/darkGrey"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/searchView"
+        app:layout_constraintEnd_toStartOf="@+id/searchView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/searchView" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/bg_rectangle_corners_18"
+        android:elevation="@dimen/_8sdp"
+        android:inputType="text"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/filter"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/menu"
+        app:layout_constraintTop_toTopOf="parent"
+        app:searchIcon="@drawable/ic_magnifier" />
+
+    <ImageView
+        android:id="@+id/filter"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_margin="@dimen/_12sdp"
+        android:background="@drawable/bg_oval"
+        android:elevation="@dimen/_18sdp"
+        android:padding="@dimen/_8sdp"
+        android:src="@drawable/ic_filter"
+        android:tint="@color/darkGrey"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/searchView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/searchView"
+        app:layout_constraintTop_toTopOf="@+id/searchView" />
+
+    <ImageView
+        android:id="@+id/imageView_sale"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_36sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_32sdp"
+        android:backgroundTint="@color/darkGrey"
+        android:background="@drawable/bg_rectangle_corners_18"
+        android:elevation="@dimen/_8sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView_rent"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
+
+    <ImageView
+        android:id="@+id/markerSale"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:src="@drawable/ic_location"
+        android:layout_margin="@dimen/_8sdp"
+        android:background="@drawable/bg_oval"
+        android:backgroundTint="@color/blue"
+        android:tint="@android:color/white"
+        android:padding="@dimen/_4sdp"
+        android:elevation="@dimen/_8sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_sale"
+        app:layout_constraintStart_toStartOf="@+id/imageView_sale"
+        app:layout_constraintTop_toTopOf="@+id/imageView_sale" />
+
+    <TextView
+        android:id="@+id/sale"
+        style="@style/textView"
+        android:text="@string/sale"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@android:color/white"
+        android:elevation="@dimen/_8sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_sale"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_sale"
+        app:layout_constraintStart_toEndOf="@+id/markerSale"
+        app:layout_constraintTop_toTopOf="@+id/imageView_sale" />
+
+    <ImageView
+        android:id="@+id/imageView_rent"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_36sdp"
+        android:backgroundTint="@color/darkGrey"
+        android:background="@drawable/bg_rectangle_corners_18"
+        android:elevation="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_sale"
+        app:layout_constraintStart_toEndOf="@+id/imageView_sale"
+        app:layout_constraintTop_toTopOf="@+id/imageView_sale"
+        app:layout_constraintEnd_toStartOf="@+id/imageView_auctions"/>
+
+    <ImageView
+        android:id="@+id/markerRent"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:src="@drawable/ic_location"
+        android:layout_margin="@dimen/_8sdp"
+        android:background="@drawable/bg_oval"
+        android:backgroundTint="@color/green"
+        android:tint="@android:color/white"
+        android:padding="@dimen/_4sdp"
+        android:elevation="@dimen/_8sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_rent"
+        app:layout_constraintStart_toStartOf="@+id/imageView_rent"
+        app:layout_constraintTop_toTopOf="@+id/imageView_rent" />
+
+    <TextView
+        android:id="@+id/rent"
+        style="@style/textView"
+        android:text="@string/rent"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@android:color/white"
+        android:elevation="@dimen/_8sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_rent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_rent"
+        app:layout_constraintStart_toEndOf="@+id/markerRent"
+        app:layout_constraintTop_toTopOf="@+id/imageView_rent" />
+
+    <ImageView
+        android:id="@+id/imageView_auctions"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_36sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:background="@drawable/bg_rectangle_corners_18"
+        android:elevation="@dimen/_8sdp"
+        android:visibility="visible"
+        android:backgroundTint="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_sale"
+        app:layout_constraintStart_toEndOf="@+id/imageView_rent"
+        app:layout_constraintTop_toTopOf="@+id/imageView_sale"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/markerAuctions"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:src="@drawable/ic_location"
+        android:layout_margin="@dimen/_8sdp"
+        android:background="@drawable/bg_oval"
+        android:tint="@android:color/white"
+        android:backgroundTint="@color/red"
+        android:padding="@dimen/_4sdp"
+        android:elevation="@dimen/_8sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_auctions"
+        app:layout_constraintStart_toStartOf="@+id/imageView_auctions"
+        app:layout_constraintTop_toTopOf="@+id/imageView_auctions" />
+
+    <TextView
+        android:id="@+id/auctions"
+        style="@style/textView"
+        android:text="@string/auctions"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/darkGrey"
+        android:elevation="@dimen/_8sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_auctions"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_auctions"
+        app:layout_constraintStart_toEndOf="@+id/markerAuctions"
+        app:layout_constraintTop_toTopOf="@+id/imageView_auctions" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
